@@ -1,0 +1,7 @@
+{
+  "name": "digi-pay-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
