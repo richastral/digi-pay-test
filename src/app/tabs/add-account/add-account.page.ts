@@ -22,6 +22,7 @@ import {
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { addIcons } from 'ionicons';
 import { cameraOutline } from 'ionicons/icons';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-account',
@@ -48,14 +49,14 @@ import { cameraOutline } from 'ionicons/icons';
     IonInput,
     IonFab,
     IonFabButton,
-    IonIcon
+    IonIcon,
   ],
 })
 export class AddAccountPage implements OnInit {
   isSupported = false;
   barcodes: Barcode[] = [];
 
-  constructor() {
+  constructor(private alertController: AlertController) {
     addIcons({ cameraOutline });
   }
 
@@ -68,7 +69,7 @@ export class AddAccountPage implements OnInit {
   async scan(): Promise<void> {
     const granted = await this.requestPermissions();
     if (!granted) {
-      // this.presentAlert();
+      this.presentAlert();
       return;
     }
     const { barcodes } = await BarcodeScanner.scan();
@@ -78,5 +79,14 @@ export class AddAccountPage implements OnInit {
   async requestPermissions(): Promise<boolean> {
     const { camera } = await BarcodeScanner.requestPermissions();
     return camera === 'granted' || camera === 'limited';
+  }
+
+  async presentAlert(): Promise<void> {
+    const alert = await this.alertController.create({
+      header: 'Permission denied',
+      message: 'Please grant camera permission to use the barcode scanner.',
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
 }
