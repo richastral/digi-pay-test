@@ -1,0 +1,27 @@
+<ion-content class="create-account-page" fullscreen>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <ion-icon name="compass-outline"></ion-icon>
+    </div>
+
+    <!-- App Name -->
+    <h1 class="app-name">DigiPay</h1>
+    <p class="app-tagline">Fast & Easy Crypto App</p>
+
+    <!-- Form -->
+    <form [formGroup]="accountForm">
+      <ion-item lines="none">
+        <ion-checkbox slot="start" formControlName="agree"></ion-checkbox>
+        <ion-label>I agree to the <a routerLink="/tabs/settings">Terms & Conditions</a></ion-label>
+      </ion-item>
+
+      <ion-button expand="block" routerLink="/tabs/accounts">Create New Wallet</ion-button>
+    </form>
+
+    <!-- Footer -->
+    <div class="footer">
+      Already have a wallet? <a routerLink="/auth/import">Import</a>
+    </div>
+  </div>
+</ion-content>

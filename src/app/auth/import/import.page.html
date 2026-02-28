@@ -1,0 +1,26 @@
+<ion-content class="import-account-page" fullscreen>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <ion-icon name="compass-outline"></ion-icon>
+    </div>
+
+    <!-- App Name -->
+    <h1 class="app-name">DigiPay</h1>
+    <p class="app-tagline">Fast & Easy Crypto App</p>
+
+    <!-- Form -->
+    <form [formGroup]="accountForm">
+      <ion-item>
+        <ion-textarea label="Mnemonic or Private Key" placeholder="Mnemonic or Private Key" formControlName="mnemonic" labelPlacement="stacked"></ion-textarea>
+      </ion-item>
+
+      <ion-button expand="block">Import Wallet</ion-button>
+    </form>
+
+    <!-- Footer -->
+    <div class="footer">
+      No wallet? <a routerLink="/auth/import">Create a Wallet</a>
+    </div>
+  </div>
+</ion-content>

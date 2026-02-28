@@ -1,0 +1,17 @@
+ion-header ion-toolbar {
+  --background: #fff;
+  color: #007aff;
+  /* Use your desired color here */
+}
+
+
+ion-content {
+  --background: #f5f5f5;
+
+}
+
+ion-content ion-list ion-card ion-img {
+  width: 50px;
+  height: auto;
+
+}

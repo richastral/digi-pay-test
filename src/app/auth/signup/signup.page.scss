@@ -1,0 +1,70 @@
+.create-account-page {
+  --ion-background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 20px auto;
+      background: #007aff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ion-icon {
+        font-size: 36px;
+        color: #fff;
+      }
+    }
+
+    h1 {
+      color: #007aff;
+    }
+
+    .app-name {
+      margin: 10px 0 0;
+      font-weight: bold;
+    }
+
+    .app-tagline {
+      margin-bottom: 30px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    form {
+      ion-label {
+        color: #555;
+      }
+
+      ion-item {
+        margin-bottom: 20px;
+        --background: transparent;
+      }
+
+      ion-button {
+        --border-radius: 8px;
+      }
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #555;
+      a {
+        color: #007aff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+  }
+}
